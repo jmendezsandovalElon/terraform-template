@@ -109,5 +109,6 @@ resource "aws_instance" "terraform_ec2" {
   security_groups = [aws_security_group.terraform_sg.id]
   user_data       = file("install_apache.sh")
   subnet_id       = aws_subnet.terraform_subnet_public.id
+  count = 2
 }
 
